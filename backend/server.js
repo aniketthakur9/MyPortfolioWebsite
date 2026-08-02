@@ -1,4 +1,4 @@
-const contactRoute = require("./routes/contact");
+const contactRoute = require("./routes/contactRoutes");
 const db = require("./config/db");
 const express = require("express");
 const cors = require("cors");
