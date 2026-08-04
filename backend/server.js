@@ -1,3 +1,4 @@
+const authRoutes = require("./routes/authRoutes");
 const contactRoute = require("./routes/contactRoutes");
 const db = require("./config/db");
 const express = require("express");
@@ -17,6 +18,8 @@ app.use(
     contactRoute
 
 );
+
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
 

@@ -11,7 +11,10 @@ const titles = [
     "DevOps Engineer"
 
 ];
+
 const contactForm = document.getElementById("contactForm");
+
+const submitBtn = document.getElementById("submitBtn");
 
 contactForm.addEventListener("submit", async (e) => {
 
@@ -19,40 +22,88 @@ contactForm.addEventListener("submit", async (e) => {
 
     const formData = {
 
-    name: contactForm.name.value,
+        name: contactForm.name.value,
 
-    email: contactForm.email.value,
+        email: contactForm.email.value,
 
-    subject: contactForm.subject.value,
+        subject: contactForm.subject.value,
 
-    message: contactForm.message.value
+        message: contactForm.message.value
 
-};
+    };
 
-try {
+    try {
 
-    const response = await fetch("http://localhost:5000/api/contact", {
+submitBtn.disabled = true;
+submitBtn.innerHTML = "⏳ Sending...";
 
-        method: "POST",
+        const response = await fetch("http://localhost:5000/api/contact", {
 
-        headers: {
+            method: "POST",
 
-            "Content-Type": "application/json"
+            headers: {
 
-        },
+                "Content-Type": "application/json"
 
-        body: JSON.stringify(formData)
+            },
 
-    });
+            body: JSON.stringify(formData)
 
-    const result = await response.json();
+        });
 
-    console.log(result);
+        const data = await response.json();
 
-} catch (error) {
+        if (data.success) {
 
-    console.error(error);
+    Toastify({
+        text: data.message,
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "#16a34a"
+        }
+    }).showToast();
+
+    contactForm.reset();
+
+    submitBtn.disabled = false;
+submitBtn.textContent = "Send Message";
+
+} else {
+
+    Toastify({
+        text: data.message,
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "#dc2626"
+        }
+    }).showToast();
+
+    submitBtn.disabled = false;
+submitBtn.textContent = "Send Message";
 
 }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to connect to the server.");Toastify({
+    text: "Unable to connect to the server.",
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    style: {
+        background: "#dc2626"
+    }
+}).showToast();
+
+submitBtn.disabled = false;
+submitBtn.textContent = "Send Message";
+
+    }
 
 });

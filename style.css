@@ -2777,3 +2777,12 @@ body{
         transform: translateY(-8px);
     }
 }
+.contact-form button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
