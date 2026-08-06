@@ -11,7 +11,7 @@ async function loadMessages() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/contact");
+        const response = await fetch("https://aniketportfolio.duckdns.org/api/contact");
 
         const data = await response.json();
 
@@ -58,7 +58,7 @@ async function deleteMessage(id) {
 
     try {
 
-        const response = await fetch(`http://localhost:5000/api/contact/${id}`, {
+        const response = await fetch(`https://aniketportfolio.duckdns.org/api/contact/${id}`, {
 
             method: "DELETE"
 
