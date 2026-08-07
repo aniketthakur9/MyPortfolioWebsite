@@ -16,6 +16,18 @@
     <link rel="stylesheet"
           href="style.css">
 
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+
+
 </head>
 
 <body>
@@ -826,95 +838,155 @@
                     CONTACT V2
 ====================================================== -->
 
-<section id="contact" class="contact">
+<section id="contact" class="contact-section">
 
-    <h2 class="section-heading">
+    <div class="contact-heading">
 
-        Let's Work Together
+        <span>CONTACT</span>
 
-    </h2>
+        <h2>
+            Let's Work <span>Together</span>
+        </h2>
 
-    <p class="section-subtitle">
+        <p>
+            Interested in Cloud Engineering, AWS or DevOps opportunities?
+            Feel free to contact me.
+        </p>
 
-        Interested in Cloud Engineering, AWS or DevOps opportunities?
-        Feel free to contact me.
-
-    </p>
+    </div>
 
     <div class="contact-wrapper">
 
-        <div class="contact-info">
+        <!-- LEFT CARD -->
 
-            <h3>
+        <div class="contact-card">
 
-                Contact Information
+            <h3>Get In Touch</h3>
 
-            </h3>
-
-            <p>
-
-                📧 aniket70642@gmail.com
-
+            <p class="contact-subtitle">
+                I'm always open to discussing new projects,
+                internship opportunities and Cloud Engineering roles.
             </p>
 
-            <p>
+            <!-- EMAIL -->
 
-                💼 LinkedIn
+            <a href="mailto:aniket70642@gmail.com" class="contact-link">
 
-            </p>
+                <div class="icon-box email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
 
-            <p>
+                <div class="contact-text">
+                    <h4>Email</h4>
+                    <span>aniket70642@gmail.com</span>
+                </div>
 
-                🐙 GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
 
-            </p>
+            </a>
 
-            <p>
+            <!-- LINKEDIN -->
 
-                📍 Himachal Pradesh, India
+            <a href="https://www.linkedin.com/in/aniket-thakur-848617313"
+               target="_blank"
+               class="contact-link">
 
-            </p>
+                <div class="icon-box linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+
+                <div class="contact-text">
+                    <h4>LinkedIn</h4>
+                    <span>linkedin.com/in/aniket-thakur-848617313</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+            <!-- GITHUB -->
+
+            <a href="https://github.com/aniketthakur9"
+               target="_blank"
+               class="contact-link">
+
+                <div class="icon-box github">
+    <span class="github-mark">
+        <i class="fa-brands fa-github"></i>
+    </span>
+</div>
+
+                <div class="contact-text">
+                    <h4>GitHub</h4>
+                    <span>github.com/aniketthakur9</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+            <!-- LOCATION -->
+
+            <div class="contact-link location">
+
+                <div class="icon-box location-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="contact-text">
+                    <h4>Location</h4>
+                    <span>Hamirpur, Himachal Pradesh, India</span>
+                </div>
+
+            </div>
 
         </div>
 
-        <form id="contactForm" class="contact-form">
+        <!-- RIGHT CARD -->
 
-    <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-    >
+        <div class="contact-form">
 
-    <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-    >
+    <h3>Send Me a Message</h3>
 
-    <input
-        type="text"
-        name="subject"
-        placeholder="Subject"
-    >
+    <form id="contactForm">
 
-    <textarea
-        name="message"
-        rows="6"
-        placeholder="Message"
-        required
-    ></textarea>
+        <div class="input-row">
 
-    <button
-        type="submit"
-        id="submitBtn">
-        Send Message
-    </button>
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required>
 
-</form>
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required>
 
-    </div>
+        </div>
+
+        <input
+            type="text"
+            id="subject"
+            placeholder="Subject"
+            required>
+
+        <textarea
+            id="message"
+            rows="8"
+            maxlength="1000"
+            placeholder="Your Message"
+            required></textarea>
+
+        <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+        </button>
+
+    </form>
+
+</div>
 
 </section>
 
